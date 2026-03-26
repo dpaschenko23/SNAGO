@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Рынок аренды зарядных устройств в Сербии</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+ :root {
+ --black: #0a0a0a; --white: #f5f4f0; --gray-100: #e8e7e2;
+ --gray-200: #c8c7c0; --gray-500: #7a7870; --gray-700: #3a3835;
+ }
+ *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+ html{scroll-behavior:smooth}
+ body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--black);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+ /* FOOTNOTES */
+ sup.fn{font-family:'DM Mono',monospace;font-size:9px;font-weight:600;vertical-align:super;margin-left:1px}
+ sup.fn a{color:var(--gray-500);text-decoration:none;padding:0 2px;border-bottom:1px solid var(--gray-200);transition:color .15s,border-color .15s}
+ sup.fn a:hover{color:var(--black);border-color:var(--black)}
+ .source-item{scroll-margin-top:80px}
+ .source-item:target{border-left:2px solid var(--black);padding-left:8px;margin-left:-10px}
+ .source-item:target .source-num{color:var(--black)}
+
+ /* NAV */
+ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:56px;border-bottom:1px solid #333}
+ .nav-logo{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;opacity:.6}
+ .nav-links{display:flex;gap:2rem;list-style:none}
+ .nav-links a{color:var(--white);text-decoration:none;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.5;transition:opacity .2s}
+ .nav-links a:hover{opacity:1}
+
+ /* HERO */
+ .hero{margin-top:56px;background:var(--black);color:var(--white);min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+ .hero-left{padding:80px 60px 80px 80px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid #2a2a2a}
+ .hero-tag{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-500);margin-bottom:3rem;display:flex;align-items:center;gap:1rem}
+ .hero-tag::before{content:'';display:block;width:24px;height:1px;background:var(--gray-500)}
+ .hero-title{font-family:'Playfair Display',serif;font-size:clamp(48px,5vw,80px);font-weight:900;line-height:1;letter-spacing:-.02em}
+ .hero-title em{font-style:italic;font-weight:400;color:var(--gray-200)}
+ .hero-meta{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-top:1px solid #2a2a2a;padding-top:2rem}
+ .hero-meta-item{padding:1rem 0}
+ .hero-meta-item:nth-child(2n){padding-left:2rem;border-left:1px solid #2a2a2a}
+ .hero-meta-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-500);margin-bottom:.25rem}
+ .hero-meta-value{font-size:14px;color:var(--white);font-weight:500}
+ .hero-right{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;gap:2.5rem;position:relative}
+ .hero-stat{animation:fadeSlide .8s ease both}
+ .hero-stat:nth-child(1){animation-delay:.1s}
+ .hero-stat:nth-child(2){animation-delay:.25s}
+ .hero-stat:nth-child(3){animation-delay:.4s}
+ @keyframes fadeSlide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+ .hero-stat-number{font-family:'Playfair Display',serif;font-size:56px;font-weight:700;line-height:1;color:var(--white)}
+ .hero-stat-label{font-size:13px;color:var(--gray-500);margin-top:.25rem;max-width:260px}
+ .hero-stat-divider{height:1px;background:#222}
+
+ /* LAYOUT */
+ .container{max-width:1100px;margin:0 auto;padding:0 3rem}
+ section{padding:100px 0;border-bottom:1px solid var(--gray-100)}
+ .section-header{display:flex;align-items:flex-start;gap:2rem;margin-bottom:64px}
+ .section-num{font-family:'Playfair Display',serif;font-size:clamp(64px,8vw,100px);font-weight:900;color:var(--gray-100);line-height:1;flex-shrink:0;letter-spacing:-.03em;padding-top:0}
+ .section-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-.02em;padding-top:8px}
+ .section-title em{font-style:italic;color:var(--gray-500)}
+
+ /* SUMMARY */
+ .summary-lead{font-family:'Playfair Display',serif;font-size:22px;line-height:1.6;font-weight:400;max-width:800px;margin-bottom:3rem;color:var(--gray-700)}
+ .summary-lead strong{color:var(--black);font-weight:700}
+ .three-things{border:1px solid var(--black);padding:0;margin-top:3rem}
+ .three-things-header{background:var(--black);color:var(--white);padding:16px 32px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+ .three-things-item{display:flex;gap:0;border-bottom:1px solid var(--gray-100)}
+ .three-things-item:last-child{border-bottom:none}
+ .three-things-num{min-width:64px;padding:24px;font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--gray-200);border-right:1px solid var(--gray-100);display:flex;align-items:flex-start}
+ .three-things-text{padding:24px 32px;font-size:15px;line-height:1.65}
+
+ /* CHART */
+ .chart-wrap{background:var(--white);border:1px solid var(--gray-100);padding:36px 40px;margin:2rem 0}
+ .chart-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-500);margin-bottom:24px}
+ .bar-chart{display:flex;flex-direction:column;gap:14px}
+ .bar-row{display:grid;grid-template-columns:180px 1fr 70px;align-items:center;gap:12px}
+ .bar-label{font-size:12px;color:var(--gray-700);line-height:1.3}
+ .bar-track{background:var(--gray-100);height:20px;position:relative;overflow:hidden}
+ .bar-fill{height:100%;background:var(--black);animation:barGrow 1.2s ease both}
+ .bar-fill.light{background:var(--gray-200)}
+ @keyframes barGrow{from{width:0!important}to{}}
+ .bar-value{font-family:'DM Mono',monospace;font-size:12px;font-weight:600;text-align:right}
+
+ /* PHOTO */
+ .section-photo{width:100%;height:280px;object-fit:cover;display:block;margin-bottom:1rem;filter:grayscale(100%);border:1px solid var(--gray-100)}
+ .photo-caption{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--gray-500);text-align:right;margin-bottom:2.5rem}
+ .photo-inline{width:100%;height:220px;object-fit:cover;display:block;filter:grayscale(100%);margin-bottom:.5rem}
+
+ /* MARKET */
+ .market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-100);border:1px solid var(--gray-100);margin-bottom:3rem}
+ .market-card{background:var(--white);padding:40px 32px}
+ .market-card-method{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-500);margin-bottom:1.5rem}
+ .market-card-amount{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;line-height:1;margin-bottom:.5rem}
+ .market-card-label{font-size:12px;color:var(--gray-500);margin-bottom:1.5rem}
+ .market-card-desc{font-size:13px;color:var(--gray-700);line-height:1.6;border-top:1px solid var(--gray-100);padding-top:1.5rem}
+ .market-consensus{background:var(--black);color:var(--white);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+ .market-consensus-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-500)}
+ .market-consensus-value{font-family:'Playfair Display',serif;font-size:36px;font-weight:700}
+ .market-consensus-note{font-size:13px;color:var(--gray-500);max-width:360px;line-height:1.5}
+
+ /* DATA TABLE */
+ .data-table{width:100%;border-collapse:collapse;margin:2rem 0}
+ .data-table th{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-500);text-align:left;padding:12px 16px;border-bottom:2px solid var(--black);font-weight:500}
+ .data-table td{padding:14px 16px;border-bottom:1px solid var(--gray-100);font-size:14px;vertical-align:top;line-height:1.5}
+ .data-table tr:last-child td{border-bottom:none}
+ .data-table tr:hover td{background:var(--gray-100)}
+ .data-table td:first-child{font-weight:500}
+ .td-mono{font-family:'DM Mono',monospace;font-size:13px}
+
+ /* COMPETITORS */
+ .competitor-block{border:1px solid var(--gray-100);margin-bottom:2px;overflow:hidden}
+ .competitor-header{display:flex;align-items:center;justify-content:space-between;padding:24px 32px;background:var(--black);color:var(--white);cursor:pointer;transition:background .2s}
+ .competitor-header:hover{background:#1a1a1a}
+ .competitor-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700}
+ .competitor-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;color:var(--gray-500);text-transform:uppercase}
+ .competitor-body{padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+ .competitor-kv{margin-bottom:1rem}
+ .competitor-kv-key{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-500);margin-bottom:4px}
+ .competitor-kv-val{font-size:14px;line-height:1.5}
+ .competitor-weakness{grid-column:1/-1;background:var(--gray-100);padding:20px 24px;font-size:14px;line-height:1.6;border-left:3px solid var(--black)}
+
+ /* INSIGHTS */
+ .insight{display:grid;grid-template-columns:120px 1fr;gap:0;border-top:1px solid var(--gray-100);padding:48px 0}
+ .insight:first-child{border-top:none;padding-top:0}
+ .insight-num{font-family:'Playfair Display',serif;font-size:80px;font-weight:900;color:var(--gray-100);line-height:1;padding-top:4px}
+ .insight-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.25;margin-bottom:1.25rem;letter-spacing:-.01em}
+ .insight-title em{font-style:italic;color:var(--gray-500)}
+ .insight-body{font-size:15px;color:var(--gray-700);line-height:1.7;max-width:700px}
+ .insight-callout{margin-top:1.5rem;padding:20px 24px;border:1px solid var(--black);font-size:14px;font-weight:500;line-height:1.6}
+ .insight-callout strong{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-500);margin-bottom:8px}
+
+ /* STAT PILLS */
+ .stat-pills{display:flex;gap:2px;margin:1.5rem 0}
+ .stat-pill{flex:1;background:var(--black);color:var(--white);padding:20px 16px;text-align:center}
+ .stat-pill-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;line-height:1}
+ .stat-pill-label{font-size:11px;color:var(--gray-500);margin-top:6px;line-height:1.4}
+
+ /* RISKS */
+ .risks-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--gray-100)}
+ .risk-card{background:var(--white);padding:36px 32px;position:relative;overflow:hidden}
+ .risk-card.critical{background:var(--black);color:var(--white)}
+ .risk-card.critical .risk-card-body{color:var(--gray-200)}
+ .risk-card.critical .risk-level{color:var(--gray-500);border-color:#333}
+ .risk-card-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-500);margin-bottom:1rem}
+ .risk-card.critical .risk-card-label{color:#555}
+ .risk-card-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:1rem;line-height:1.3}
+ .risk-card-body{font-size:14px;line-height:1.65;color:var(--gray-700)}
+ .risk-level{display:inline-flex;align-items:center;gap:6px;margin-top:1.5rem;padding:6px 12px;border:1px solid var(--gray-200);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500)}
+ .risk-dot{width:6px;height:6px;border-radius:50%}
+ .risk-dot.critical{background:#ff4444}
+ .risk-dot.moderate{background:#ffaa00}
+ .risk-dot.low{background:#44bb44}
+
+ /* OPPORTUNITIES */
+ .opp-grid{display:grid;grid-template-columns:2fr 1fr;gap:2px;background:var(--gray-100);margin-bottom:2rem}
+ .opp-grid.reverse{grid-template-columns:1fr 2fr}
+ .opp-card{background:var(--white);padding:48px 40px}
+ .opp-card.dark{background:var(--black);color:var(--white)}
+ .opp-leverage{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-500);margin-bottom:1.5rem}
+ .opp-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;margin-bottom:1.25rem;line-height:1.2}
+ .opp-body{font-size:14px;line-height:1.7;color:var(--gray-700)}
+ .opp-card.dark .opp-body{color:var(--gray-200)}
+ .opp-badge{display:inline-block;margin-top:1.5rem;padding:8px 16px;border:1px solid currentColor;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em}
+ .opp-stat{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:48px 32px;background:var(--white)}
+ .opp-stat-num{font-family:'Playfair Display',serif;font-size:56px;font-weight:900;line-height:1;color:var(--black)}
+ .opp-stat-label{font-size:12px;color:var(--gray-500);margin-top:.5rem;max-width:160px}
+
+ /* ACTION */
+ .action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-100)}
+ .action-col{background:var(--white);padding:40px 32px}
+ .action-col:first-child{background:var(--black);color:var(--white)}
+ .action-col-header{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-500);margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid #222}
+ .action-col:not(:first-child) .action-col-header{border-color:var(--gray-100)}
+ .action-col-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:2rem;line-height:1.25}
+ .action-item{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+ .action-item-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--gray-500);padding-top:2px;min-width:24px}
+ .action-item-text{font-size:14px;line-height:1.6}
+ .action-col:first-child .action-item-text{color:var(--gray-200)}
+
+ /* CONCLUSION */
+ .conclusion{background:var(--black);color:var(--white);border:none;padding:120px 0}
+ .conclusion .section-num{color:#444}
+ .conclusion .section-title{color:var(--white)}
+ .conclusion-body{font-size:17px;line-height:1.75;color:var(--gray-200);max-width:680px;margin-left:164px;margin-bottom:3rem}
+ .conclusion-cta{margin-left:164px;border:1px solid #333;padding:40px;max-width:560px}
+ .conclusion-cta-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#555;margin-bottom:1rem}
+ .conclusion-cta-text{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;line-height:1.35;color:var(--white)}
+ .conclusion-cta-sub{font-size:14px;color:var(--gray-500);margin-top:1rem;line-height:1.6}
+
+ /* SOURCES */
+ .sources-list{columns:2;gap:3rem;column-rule:1px solid var(--gray-200)}
+ .source-item{font-size:12px;color:var(--gray-500);margin-bottom:1rem;break-inside:avoid;display:flex;gap:8px}
+ .source-num{font-family:'DM Mono',monospace;font-size:10px;font-weight:600;color:var(--black);min-width:20px;padding-top:1px}
+ .source-item a{color:var(--black);text-decoration:none;border-bottom:1px solid var(--gray-200);font-weight:500}
+ .source-item a:hover{border-color:var(--black)}
+
+ footer{background:var(--black);color:var(--gray-500);padding:40px 3rem;display:flex;justify-content:space-between;align-items:center;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+ .macro-table-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem}
+
+ @media(max-width:768px){
+ nav{padding:0 1.5rem}.nav-links{display:none}
+ .hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:40px 24px 60px}
+ .container{padding:0 1.5rem}.section-header{flex-direction:column;gap:1rem}
+ .market-grid,.risks-grid,.action-grid{grid-template-columns:1fr}
+ .opp-grid,.opp-grid.reverse{grid-template-columns:1fr}
+ .competitor-body{grid-template-columns:1fr}
+ .conclusion-body,.conclusion-cta{margin-left:0}
+ .insight{grid-template-columns:1fr}.insight-num{font-size:48px}
+ .macro-table-wrap{grid-template-columns:1fr}
+ footer{flex-direction:column;gap:1rem;text-align:center}
+ .market-consensus{flex-direction:column}
+ .bar-row{grid-template-columns:120px 1fr 55px}
+ .stat-pills{flex-direction:column}
+ .sources-list{columns:1}
+ }
+</style>
+</head>
+<body>
+
+<nav>
+ <span class="nav-logo">Attack Surface Report · Сербия 2025</span>
+ <ul class="nav-links">
+ <li><a href="#market">Рынок</a></li>
+ <li><a href="#competitors">Конкуренты</a></li>
+ <li><a href="#insights">Инсайты</a></li>
+ <li><a href="#risks">Риски</a></li>
+ <li><a href="#opportunities">Возможности</a></li>
+ <li><a href="#plan">План</a></li>
+ </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+ <div class="hero-left">
+ <div>
+ <div class="hero-tag">Исследование рынка · Белград · 2025</div>
+ <h1 class="hero-title">Аренда<br>зарядных<br>устройств<br><em>в Сербии</em></h1>
+ </div>
+ <div class="hero-meta">
+ <div class="hero-meta-item"><div class="hero-meta-label">Методология</div><div class="hero-meta-value">Attack Surface Framework</div></div>
+ <div class="hero-meta-item"><div class="hero-meta-label">Регион</div><div class="hero-meta-value">Белград + Нови-Сад</div></div>
+ <div class="hero-meta-item"><div class="hero-meta-label">Горизонт</div><div class="hero-meta-value">6–18 месяцев</div></div>
+ <div class="hero-meta-item"><div class="hero-meta-label">Тип бизнеса</div><div class="hero-meta-value">Операторский SaaS</div></div>
+ </div>
+ </div>
+ <div class="hero-right">
+ <div class="hero-stat">
+ <div class="hero-stat-number">100K+</div>
+ <div class="hero-stat-label">аренд совершено локальным игроком Dopuni.se за 2 года</div>
+ </div>
+ <div class="hero-stat-divider"></div>
+ <div class="hero-stat">
+ <div class="hero-stat-number">$0,59–3M</div>
+ <div class="hero-stat-label">консенсус-оценка рынка в год для Белграда и Нови-Сада</div>
+ </div>
+ <div class="hero-stat-divider"></div>
+ <div class="hero-stat">
+ <div class="hero-stat-number">200+</div>
+ <div class="hero-stat-label">заведений под покрытием конкурента без крупных европейских операторов на рынке</div>
+ </div>
+ </div>
+</section>
+
+<!-- SUMMARY -->
+<section id="summary">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-num">00</span>
+ <h2 class="section-title">Краткое<br><em>резюме</em></h2>
+ </div>
+ <p class="summary-lead">
+ Рынок аренды зарядных устройств в Сербии существует — и это не гипотеза.
+ Местный игрок Dopuni.se накопил <strong>100 000+ аренд на 200 локациях</strong><sup class="fn"><a href="#src-1">1</a></sup>
+ за два года без заметного маркетинга. Ни один крупный европейский оператор —
+ Naki, UpCharge, MrCharge — на Балканах не присутствует. Белград входит в топ
+ 3–5 ночных столиц Европы<sup class="fn"><a href="#src-12">12</a></sup>, где средняя клубная сессия длится 6–8 часов:
+ это <strong>структурный спрос</strong>, а не случайный.
+ </p>
+ <p class="summary-lead">
+ Вместе с тем это <strong>операторский бизнес с операторской экономикой</strong> —
+ не венчурная история. Ключевое стратегическое окно 6–18 месяцев связано с контрарной позицией:
+ <strong>venue-pays SaaS-моделью</strong>, при которой заведение платит ежемесячный абонемент,
+ а гости пользуются зарядкой бесплатно. Этого не делает никто из действующих игроков.
+ </p>
+ <div class="three-things">
+ <div class="three-things-header">Три вещи, которые нужно знать до принятия решения</div>
+ <div class="three-things-item">
+ <div class="three-things-num">1</div>
+ <div class="three-things-text">Главный незакрытый риск — структура контрактов Dopuni.se с 200 локациями. Один разговор с менеджером заведения даст ответ.</div>
+ </div>
+ <div class="three-things-item">
+ <div class="three-things-num">2</div>
+ <div class="three-things-text">Зарядка для е-сигарет — работающий B2B-аргумент, но не самостоятельный потребительский продукт. Рынок е-сигарет Сербии — $33,7 млн<sup class="fn"><a href="#src-11">11</a></sup>, но это устройства и расходники, не зарядка.</div>
+ </div>
+ <div class="three-things-item">
+ <div class="three-things-num">3</div>
+ <div class="three-things-text">Валидация обходится в <strong>€0 до закупки железа</strong>: достаточно писем о намерениях от пяти заведений за 30 дней.</div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- MARKET -->
+<section id="market">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-num">01</span>
+ <h2 class="section-title">Оценка<br><em>объёма рынка</em></h2>
+ </div>
+
+ <div class="chart-wrap">
+ <div class="chart-title">Глобальный рынок аренды павербанков, рост 2024 → 2030 <sup class="fn"><a href="#src-3">3</a></sup></div>
+ <div class="bar-chart">
+ <div class="bar-row">
+ <div class="bar-label">2024 (факт)</div>
+ <div class="bar-track"><div class="bar-fill" style="width:47.8%"></div></div>
+ <div class="bar-value">$7,6B</div>
+ </div>
+ <div class="bar-row">
+ <div class="bar-label">2027 (прогноз)</div>
+ <div class="bar-track"><div class="bar-fill light" style="width:69%"></div></div>
+ <div class="bar-value">~$11B</div>
+ </div>
+ <div class="bar-row">
+ <div class="bar-label">2030 (прогноз)</div>
+ <div class="bar-track"><div class="bar-fill light" style="width:100%"></div></div>
+ <div class="bar-value">$15,9B</div>
+ </div>
+ </div>
+ <div style="margin-top:14px;font-size:11px;color:var(--gray-500)">CAGR 13,5% · GlobeNewswire 2022 </div>
+ </div>
+
+ <div class="market-grid">
+ <div class="market-card">
+ <div class="market-card-method">Метод 1 · MAX-сценарий</div>
+ <div class="market-card-amount">$3,0M</div>
+ <div class="market-card-label">в год</div>
+ <div class="market-card-desc">450 станций × €200/мес (бенчмарк Brick на сильных заведениях)<sup class="fn"><a href="#src-2">2</a></sup> + рекламная монетизация экранов по CPM.</div>
+ </div>
+ <div class="market-card">
+ <div class="market-card-method">Метод 2 · MIN-сценарий</div>
+ <div class="market-card-amount">$2,7M</div>
+ <div class="market-card-label">в год</div>
+ <div class="market-card-desc">450 станций × €20/мес (средний бенчмарк Brick по всей сети) + консервативная рекламная составляющая.</div>
+ </div>
+ <div class="market-card">
+ <div class="market-card-method">Метод 3 · Аналогия рынка</div>
+ <div class="market-card-amount">$0,6M</div>
+ <div class="market-card-label">в год</div>
+ <div class="market-card-desc">Словения ($0,30M/год) × коэффициент ночной жизни 1,97<sup class="fn"><a href="#src-12">12</a></sup>. Не учитывает туристический поток<sup class="fn"><a href="#src-6">6</a></sup>.</div>
+ </div>
+ </div>
+
+ <div class="chart-wrap">
+ <div class="chart-title">Сравнение трёх методов оценки рынка (Белград + Нови-Сад)</div>
+ <div class="bar-chart">
+ <div class="bar-row">
+ <div class="bar-label">MAX · Метод 1<br><span style="font-size:10px;color:var(--gray-500)">€200/ст/мес · Brick</span></div>
+ <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+ <div class="bar-value">$3,0M</div>
+ </div>
+ <div class="bar-row">
+ <div class="bar-label">MIN · Метод 2<br><span style="font-size:10px;color:var(--gray-500)">€20/ст/мес · Brick</span></div>
+ <div class="bar-track"><div class="bar-fill light" style="width:89%"></div></div>
+ <div class="bar-value">$2,7M</div>
+ </div>
+ <div class="bar-row">
+ <div class="bar-label">Аналогия · Метод 3<br><span style="font-size:10px;color:var(--gray-500)">от рынка Словении</span></div>
+ <div class="bar-track"><div class="bar-fill light" style="width:20%"></div></div>
+ <div class="bar-value">$0,6M</div>
+ </div>
+ </div>
+ <div style="margin-top:12px;font-size:11px;color:var(--gray-500)">Нижняя граница ($0,6M) достаточна для окупаемости при правильном выборе заведений</div>
+ </div>
+
+ <div class="market-consensus">
+ <div>
+ <div class="market-consensus-label">Консенсус-оценка</div>
+ <div class="market-consensus-value">$0,6 — $3,0M / год</div>
+ </div>
+ <div class="market-consensus-note">Широкий диапазон отражает неопределённость модели монетизации, а не неопределённость спроса.</div>
+ </div>
+
+ <div style="margin-top:4rem">
+ <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:2rem">Макроэкономический фон Сербии</h3>
+ <div class="macro-table-wrap">
+ <table class="data-table">
+ <thead><tr><th>Показатель</th><th>Значение</th></tr></thead>
+ <tbody>
+ <tr><td>ВВП Сербии (2024) <sup class="fn"><a href="#src-4">4</a></sup></td><td class="td-mono">$89 млрд</td></tr>
+ <tr><td>Рост ВВП </td><td class="td-mono">3,9%</td></tr>
+ <tr><td>Средняя зарплата, Белград </td><td class="td-mono">€855 / мес</td></tr>
+ <tr><td>Медианная зарплата, Сербия </td><td class="td-mono">€680 / мес</td></tr>
+ <tr><td>Проникновение смартфонов </td><td class="td-mono">97%</td></tr>
+ <tr><td>Проникновение интернета </td><td class="td-mono">90%</td></tr>
+ </tbody>
+ </table>
+ <table class="data-table">
+ <thead><tr><th>Показатель</th><th>Значение</th></tr></thead>
+ <tbody>
+ <tr><td>Цифровые платежи </td><td class="td-mono">77% населения</td></tr>
+ <tr><td>Иностранный туризм (2024) </td><td class="td-mono">2,38 млн (+11,7%)</td></tr>
+ <tr><td>Ночёвки в Белграде </td><td class="td-mono">~3 млн / год</td></tr>
+ <tr><td>Иностранцы в Airbnb Белграда <sup class="fn"><a href="#src-5">5</a></sup></td><td class="td-mono">86,9%</td></tr>
+ <tr><td>Использование смартфона </td><td class="td-mono">~5 ч / день</td></tr>
+ <tr><td>ИКТ-экспорт Сербии </td><td class="td-mono">€4,13 млрд (+20%)</td></tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- COMPETITORS -->
+<section id="competitors">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-num">02</span>
+ <h2 class="section-title">Конкурентный<br><em>ландшафт</em></h2>
+ </div>
+
+ 
+ <div class="photo-caption">Белград — топ 3–5 ночных столиц Европы <sup class="fn"><a href="#src-12">12</a></sup> · фото: Unsplash</div>
+
+ <div class="competitor-block">
+ <div class="competitor-header">
+ <div>
+ <div class="competitor-tag">Локальный игрок · Белград · 2023</div>
+ <div class="competitor-name">Dopuni.se</div>
+ </div>
+ <div style="font-family:'DM Mono',monospace;font-size:11px;color:#666;text-align:right">
+ <div>200+ локаций <sup class="fn"><a href="#src-1">1</a></sup></div>
+ <div style="margin-top:4px">100K+ аренд </div>
+ </div>
+ </div>
+ <div style="padding:0 32px">
+ 
+ <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--gray-500);text-align:right;margin-bottom:24px">Типичная зарядная станция · фото: Unsplash</div>
+ </div>
+ <div class="competitor-body">
+ <div>
+ <div class="competitor-kv">
+ <div class="competitor-kv-key">Модель </div>
+ <div class="competitor-kv-val">Почасовая аренда + B2B-реклама на экранах (двойная выручка)</div>
+ </div>
+ <div class="competitor-kv">
+ <div class="competitor-kv-key">Сеть </div>
+ <div class="competitor-kv-val">Рестораны сети Walter, аэропорт Ниша, технологические конференции</div>
+ </div>
+ </div>
+ <div>
+ <div class="competitor-kv">
+ <div class="competitor-kv-key">Бренд </div>
+ <div class="competitor-kv-val">153 подписчика Instagram, 0 отзывов в App Store за 2+ года</div>
+ </div>
+ <div class="competitor-kv">
+ <div class="competitor-kv-key">Ценообразование </div>
+ <div class="competitor-kv-val">Не индексируется поисковиками (JS-рендер)</div>
+ </div>
+ </div>
+ <div class="competitor-weakness">
+ <strong>Слабость:</strong> 25 постов за два года — это не стратегия, это отсутствие стратегии. Контент-территория полностью свободна для нового игрока.
+ </div>
+ </div>
+ </div>
+
+ <div class="competitor-block" style="margin-top:2px">
+ <div class="competitor-header">
+ <div>
+ <div class="competitor-tag">Шведский стартап · 21+ страна · Франчайзинг</div>
+ <div class="competitor-name">Brick Serbia</div>
+ </div>
+ <div style="font-family:'DM Mono',monospace;font-size:11px;color:#666;text-align:right">
+ <div>~4 000 станций глобально <sup class="fn"><a href="#src-2">2</a></sup></div>
+ <div style="margin-top:4px">3,8★ / 170 отзывов </div>
+ </div>
+ </div>
+ <div class="competitor-body">
+ <div>
+ <div class="competitor-kv"><div class="competitor-kv-key">Инвестиция оператора </div><div class="competitor-kv-val">~€28 500 (100 станций min.)</div></div>
+ <div class="competitor-kv"><div class="competitor-kv-key">Цена аренды </div><div class="competitor-kv-val">117 RSD/ч (~€1) · макс 500 RSD/день · штраф €30</div></div>
+ <div class="competitor-kv"><div class="competitor-kv-key">Доля оператора </div><div class="competitor-kv-val">85% выручки · Royalty: €5/ст/мес + €10K/год</div></div>
+ </div>
+ <div>
+ <div class="competitor-kv"><div class="competitor-kv-key">Выручка по заведениям </div><div class="competitor-kv-val">€20/мес средняя · до €200/мес сильное</div></div>
+ <div class="competitor-kv"><div class="competitor-kv-key">Окупаемость </div><div class="competitor-kv-val">~18 месяцев</div></div>
+ <div class="competitor-kv"><div class="competitor-kv-key">Балканы </div><div class="competitor-kv-val">Сербия, Хорватия, С. Македония</div></div>
+ </div>
+ <div style="grid-column:1/-1">
+ <div class="chart-wrap" style="margin:0 0 16px">
+ <div class="chart-title">Разброс выручки станции Brick — разрыв 10× </div>
+ <div class="bar-chart">
+ <div class="bar-row">
+ <div class="bar-label">Среднее заведение</div>
+ <div class="bar-track"><div class="bar-fill light" style="width:10%"></div></div>
+ <div class="bar-value">€20 /мес</div>
+ </div>
+ <div class="bar-row">
+ <div class="bar-label">Сильное заведение</div>
+ <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+ <div class="bar-value">€200 /мес</div>
+ </div>
+ </div>
+ <div style="margin-top:10px;font-size:11px;color:var(--gray-500)">Отбор заведений — критический фактор unit-экономики</div>
+ </div>
+ </div>
+ <div class="competitor-weakness">
+ <strong>Риск для нового игрока:</strong> Разрыв в 10 раз между сильным и средним заведением. Жёсткий квалификационный фильтр — с первой же сделки.
+ </div>
+ </div>
+ </div>
+
+ <div style="margin-top:3rem">
+ <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:1.5rem">Региональный ландшафт</h3>
+ <table class="data-table">
+ <thead><tr><th>Игрок</th><th>Рынок</th><th>Балканы</th></tr></thead>
+ <tbody>
+ <tr><td>Brick </td><td>Северная и Восточная Европа</td><td>Сербия, Хорватия, С. Македония</td></tr>
+ <tr><td>Naki Power</td><td>Бельгия, Западная Европа, 2 000+ станций</td><td style="font-weight:600;color:#c00">Отсутствует</td></tr>
+ <tr><td>MrCharge</td><td>Румыния</td><td style="font-weight:600;color:#c00">Отсутствует</td></tr>
+ <tr><td>UpCharge</td><td>Финляндия</td><td style="font-weight:600;color:#c00">Отсутствует</td></tr>
+ <tr><td>Aicharge</td><td>Северная Македония</td><td>Не подтверждено в Сербии</td></tr>
+ </tbody>
+ </table>
+ </div>
+
+ <div style="margin-top:3.5rem;">
+ <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+ <h3 style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;">Интерактивная карта заведений<br>и конкурентов Белграда</h3>
+ <a href="https://www.google.com/maps/d/u/0/edit?mid=1wnV_U2r1nkbXkCx5omIY56AWi4MfLq4&ll=44.77974226682974,20.429944359317485&z=13" target="_blank"
+ style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;white-space:nowrap;">
+ ↗ Открыть полную карту
+ </a>
+ </div>
+
+ <div style="border:1px solid var(--gray-100);overflow:hidden;">
+ <iframe
+ src="https://www.google.com/maps/d/embed?mid=1wnV_U2r1nkbXkCx5omIY56AWi4MfLq4&ll=44.77974226682974,20.429944359317485&z=13"
+ width="100%" height="520"
+ style="border:none;display:block;"
+ allowfullscreen loading="lazy">
+ </iframe>
+ <div style="padding:12px 20px;background:var(--black);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+ <p style="font-size:11px;color:var(--gray-500);line-height:1.6;margin:0;">
+ В эту карту входят: русскоязычные заведения, точки конкурентов, потенциальные заведения для выхода продукта на рынок
+ </p>
+ <a href="https://www.google.com/maps/d/u/0/edit?mid=1wnV_U2r1nkbXkCx5omIY56AWi4MfLq4&ll=44.77974226682974,20.429944359317485&z=13" target="_blank"
+ style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-500);text-decoration:none;border-bottom:1px solid #333;padding-bottom:2px;white-space:nowrap;flex-shrink:0;">
+ ↗ Интерактивная карта
+ </a>
+ </div>
+ </div>
+
+ <div style="margin-top:2.5rem;">
+ <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+ <h4 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;">Топ заведений по категориям</h4>
+ <a href="#" target="_blank"
+ style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;white-space:nowrap;">
+ ↗ Открыть таблицу
+ </a>
+ </div>
+ <table class="data-table">
+ <thead>
+ <tr>
+ <th>Категория</th>
+ <th>Примеры заведений</th>
+ <th>Приоритет</th>
+ <th>Профиль аудитории</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Ночные клубы</td>
+ <td>Mladost Lud, Drugstore, Eksit, Freestyler</td>
+ <td class="td-mono" style="color:#0a0a0a;font-weight:700;">★★★★★</td>
+ <td>18–35 л., 6–8 ч. сессия, высокий WTP</td>
+ </tr>
+ <tr>
+ <td>Сплавы (речные клубы)</td>
+ <td>Lasta, Sound, Tube, River Club</td>
+ <td class="td-mono" style="font-weight:700;">★★★★★</td>
+ <td>Летний сезон, туристы + locals</td>
+ </tr>
+ <tr>
+ <td>Международные отели</td>
+ <td>Hyatt, Metropol Palace, Holiday Inn</td>
+ <td class="td-mono" style="font-weight:700;">★★★★☆</td>
+ <td>Бизнес-туристы, высокий ARPU</td>
+ </tr>
+ <tr>
+ <td>Рестораны (топ-сегмент)</td>
+ <td>Sava, Walter сеть, Little Bay</td>
+ <td class="td-mono" style="font-weight:700;">★★★★☆</td>
+ <td>Длинный ужин, пары, корпоративы</td>
+ </tr>
+ <tr>
+ <td>Фестивали</td>
+ <td>EXIT (Нови-Сад), Belgrade Beer Fest</td>
+ <td class="td-mono" style="font-weight:700;">★★★★☆</td>
+ <td>210K+ чел., 80+ стран, event-пилот</td>
+ </tr>
+ <tr>
+ <td>Аэропорты / транспорт</td>
+ <td>Аэропорт Никола Тесла, вокзалы</td>
+ <td class="td-mono">★★★☆☆</td>
+ <td>Транзит, высокая тревожность, очередь</td>
+ </tr>
+ <tr>
+ <td>Кафе / коворкинги</td>
+ <td>Ziferblat, StartIT Centre, Dr Konfučije</td>
+ <td class="td-mono">★★★☆☆</td>
+ <td>Молодёжь, длинные сессии, низкий чек</td>
+ </tr>
+ </tbody>
+ </table>
+ <p style="font-size:11px;color:var(--gray-500);margin-top:8px;font-family:'DM Mono',monospace;letter-spacing:.05em;">
+ Приоритет определяется: длина сессии × объём трафика × профиль аудитории (WTP)
+ </p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- INSIGHTS -->
+<section id="insights">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-num">03</span>
+ <h2 class="section-title">Стратегические<br><em>инсайты</em></h2>
+ </div>
+
+ <div class="insight">
+ <div class="insight-num">1</div>
+ <div class="insight-content">
+ <div class="insight-title">Клиент покупает не зарядку —<br>он покупает <em>разрешение остаться</em></div>
+ <div class="insight-body">
+ Настоящая транзакция — не электричество. Это социальная лицензия оставаться в заведении без тревоги о необходимости уйти. <strong>82% молодёжи</strong><sup class="fn"><a href="#src-8">8</a></sup> небезопасно ночью с разряженным телефоном — а белградские заведения работают до 4–7 утра<sup class="fn"><a href="#src-12">12</a></sup>.
+ </div>
+ <div class="stat-pills">
+ <div class="stat-pill">
+ <div class="stat-pill-num">9/10</div>
+ <div class="stat-pill-label">стресс при заряде &lt;20% <sup class="fn"><a href="#src-7">7</a></sup></div>
+ </div>
+ <div class="stat-pill">
+ <div class="stat-pill-num">82%</div>
+ <div class="stat-pill-label">молодёжи небезопасно ночью без заряда </div>
+ </div>
+ <div class="stat-pill">
+ <div class="stat-pill-num">6–8 ч</div>
+ <div class="stat-pill-label">средняя клубная сессия в Белграде </div>
+ </div>
+ </div>
+ <div class="insight-callout">
+ <strong>Импликация для питча</strong>
+ Правильная формулировка для менеджера: «увеличьте среднее время пребывания и средний чек». Гость с доступом к зарядке заказывает ещё один напиток вместо того, чтобы уйти.
+ </div>
+ </div>
+ </div>
+
+ <div class="insight">
+ <div class="insight-num">2</div>
+ <div class="insight-content">
+ <div class="insight-title">Доверие к продукту не строится —<br><em>оно берётся в аренду</em> у заведения</div>
+ <div class="insight-body">
+ В сербской культуре доверие к третьим сторонам остаётся низким<sup class="fn"><a href="#src-17">17</a></sup>. Наличные доминируют в <strong>88% POS-транзакций</strong><sup class="fn"><a href="#src-9">9</a></sup> несмотря на 77% проникновение цифровых платежей<sup class="fn"><a href="#src-4">4</a></sup>. Молодёжь не доверяет ни одному институту<sup class="fn"><a href="#src-10">10</a></sup>. Однако никто не читает условия перед сканированием QR-кода — сканируют потому, что стоят в ресторане Walter или в аэропорту.
+ </div>
+ <div class="insight-callout">
+ <strong>Вывод</strong>
+ Качество первых 10–15 заведений важнее их количества. Один флагманский отель, один клуб в Савамале — это трансфер доверия, а не логистика дистрибуции.
+ </div>
+ </div>
+ </div>
+
+ <div class="insight">
+ <div class="insight-num">3</div>
+ <div class="insight-content">
+ <div class="insight-title">Почасовая модель — наиболее уязвимое<br><em>глобальное допущение</em></div>
+ <div class="insight-body">
+ Все операторы — от Energy Monster<sup class="fn"><a href="#src-15">15</a></sup> до Brick<sup class="fn"><a href="#src-2">2</a></sup> — используют идентичную структуру: почасовая аренда + штраф за невозврат. Конвергенция произошла через копирование, не через анализ. Brick публикует: сильные заведения генерируют <strong>€200/станция/мес</strong> — они уже воспринимают это как статью расходов на гостеприимство. Venue-pays SaaS уже принята рынком для Wi-Fi, кофемашин, климат-контроля.
+ </div>
+ <div class="insight-callout">
+ <strong>Окно</strong>
+ 6–18 месяцев до момента, когда кто-то из глобальных игроков сделает то же самое на Балканах.
+ </div>
+ </div>
+ </div>
+
+ <div class="insight">
+ <div class="insight-num">4</div>
+ <div class="insight-content">
+ <div class="insight-title">Настоящая конкуренция — не с другими зарядками,<br>а с <em>кабелем у бармена</em></div>
+ <div class="insight-body">
+ Бытовая альтернатива аренде — попросить кабель у бармена. Бесплатно, мгновенно. Смартфоны среднего сегмента (Xiaomi, Samsung 6 000–7 000 мАч) с быстрой зарядкой (10 мин = 80%) делают «одолжить кабель» технически приемлемым. Продукт выигрывает тогда, когда мобильность важнее скорости — в клубе, на фестивале, в очереди у розетки. Средний пользователь в Сербии тратит ~5 ч/день на смартфон.
+ </div>
+ </div>
+ </div>
+
+ <div class="insight">
+ <div class="insight-num">5</div>
+ <div class="insight-content">
+ <div class="insight-title">Е-сигарета — B2B-аргумент,<br><em>не потребительский продукт</em></div>
+ <div class="insight-body">
+ Рынок е-сигарет в Сербии — <strong>$33,7 млн (2025)</strong><sup class="fn"><a href="#src-11">11</a></sup>, CAGR 3,29%. Вейпинг нормализован в белградской ночной жизни. Совмещённая станция — привлекательный аргумент при подписании venue-контракта. Однако как самостоятельный потребительский продукт не работает: коннекторы не стандартизированы, законопроект о запрете вейпинга в помещениях на рассмотрении.
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- RISKS -->
+<section id="risks">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-num">04</span>
+ <h2 class="section-title">Анализ<br><em>рисков</em></h2>
+ </div>
+
+ <div class="chart-wrap" style="margin-bottom:2rem">
+ <div class="chart-title">Уязвимость ключевых допущений индустрии</div>
+ <div class="bar-chart">
+ <div class="bar-row">
+ <div class="bar-label">Почасовая — единственная модель <sup class="fn"><a href="#src-2">2</a></sup></div>
+ <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+ <div class="bar-value">4 / 5</div>
+ </div>
+ <div class="bar-row">
+ <div class="bar-label">Один продукт, один доход <sup class="fn"><a href="#src-1">1</a></sup></div>
+ <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+ <div class="bar-value">4 / 5</div>
+ </div>
+ <div class="bar-row">
+ <div class="bar-label">Hospitality — единственный канал</div>
+ <div class="bar-track"><div class="bar-fill light" style="width:60%"></div></div>
+ <div class="bar-value">3 / 5</div>
+ </div>
+ <div class="bar-row">
+ <div class="bar-label">Потребность только реактивна</div>
+ <div class="bar-track"><div class="bar-fill light" style="width:60%"></div></div>
+ <div class="bar-value">3 / 5</div>
+ </div>
+ <div class="bar-row">
+ <div class="bar-label">Бренд не имеет значения</div>
+ <div class="bar-track"><div class="bar-fill light" style="width:60%"></div></div>
+ <div class="bar-value">3 / 5</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="risks-grid">
+ <div class="risk-card critical">
+ <div class="risk-card-label">Критический риск</div>
+ <div class="risk-card-title">Контрактная позиция Dopuni.se</div>
+ <div class="risk-card-body">Главный незакрытый вопрос: имеет ли Dopuni.se эксклюзивные 12–24-месячные контракты с 200 локациями? Если да — вход юридически заблокирован. Ни один публичный источник не раскрывает структуру этих контрактов.</div>
+ <div class="risk-level"><span class="risk-dot critical"></span> Критический · Незакрытый</div>
+ </div>
+ <div class="risk-card critical">
+ <div class="risk-card-label">Критический риск</div>
+ <div class="risk-card-title">Экономика на слабых заведениях</div>
+ <div class="risk-card-body">Brick: средняя выручка €20/мес, сильное заведение €200/мес — разрыв в 10 раз. Жёсткий квалификационный фильтр критически важен с первой же сделки.</div>
+ <div class="risk-level"><span class="risk-dot critical"></span> Критический · Управляемый</div>
+ </div>
+ <div class="risk-card">
+ <div class="risk-card-label">Умеренный риск</div>
+ <div class="risk-card-title">Наличный расчёт как барьер</div>
+ <div class="risk-card-body">88% POS-транзакций в Сербии — наличные<sup class="fn"><a href="#src-9">9</a></sup> несмотря на 77% проникновение цифровых платежей<sup class="fn"><a href="#src-4">4</a></sup>. Культурное недоверие<sup class="fn"><a href="#src-10">10</a></sup>, а не отсутствие инфраструктуры. Решение — card reader на станции.</div>
+ <div class="risk-level"><span class="risk-dot moderate"></span> Умеренный · Решаемый</div>
+ </div>
+ <div class="risk-card">
+ <div class="risk-card-label">Умеренный риск</div>
+ <div class="risk-card-title">Нулевая лояльность и региональный вход конкурента</div>
+ <div class="risk-card-body">В аренде зарядок нет сетевых эффектов. Долгосрочные контракты (12–18 месяцев) с exclusivity — единственный барьер до прихода Naki или UpCharge.</div>
+ <div class="risk-level"><span class="risk-dot moderate"></span> Умеренный · Срочный</div>
+ </div>
+ <div class="risk-card">
+ <div class="risk-card-label">Слабый риск (условный)</div>
+ <div class="risk-card-title">Е-сигарета как самостоятельный продукт</div>
+ <div class="risk-card-body">Рынок е-сигарет $33,7M<sup class="fn"><a href="#src-11">11</a></sup> — это устройства и расходники, не зарядка. Гипотеза выживает только как B2B-аргумент. Требует полевой проверки до инвестиций.</div>
+ <div class="risk-level"><span class="risk-dot low"></span> Слабый · До валидации</div>
+ </div>
+ <div class="risk-card">
+ <div class="risk-card-label">Слабый риск (непредсказуемый)</div>
+ <div class="risk-card-title">Juice Jacking и кризис категории</div>
+ <div class="risk-card-body">Атаки через зарядные кабели существуют. Один инцидент со скомпрометированной станцией без узнаваемого бренда создаёт кризис категории. Игрок с брендом выживает — безымянная станция нет.</div>
+ <div class="risk-level"><span class="risk-dot low"></span> Слабый · Непредсказуемый</div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- OPPORTUNITIES -->
+<section id="opportunities">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-num">05</span>
+ <h2 class="section-title">Карта<br><em>возможностей</em></h2>
+ </div>
+
+ 
+ <div class="photo-caption">EXIT Festival — 210 000 посетителей из 80+ стран <sup class="fn"><a href="#src-12">12</a></sup> · фото: Unsplash</div>
+
+ <div class="chart-wrap" style="margin-bottom:2rem">
+ <div class="chart-title">Сравнение возможностей по leverage</div>
+ <div class="bar-chart">
+ <div class="bar-row">
+ <div class="bar-label">Venue-Pays SaaS <sup class="fn"><a href="#src-2">2</a></sup></div>
+ <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+ <div class="bar-value">5 / 5</div>
+ </div>
+ <div class="bar-row">
+ <div class="bar-label">Event-First пилот </div>
+ <div class="bar-track"><div class="bar-fill light" style="width:80%"></div></div>
+ <div class="bar-value">4 / 5</div>
+ </div>
+ <div class="bar-row">
+ <div class="bar-label">Dual-Device B2B <sup class="fn"><a href="#src-11">11</a></sup></div>
+ <div class="bar-track"><div class="bar-fill light" style="width:60%"></div></div>
+ <div class="bar-value">3 / 5</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="opp-grid">
+ <div class="opp-card dark">
+ <div class="opp-leverage">Leverage 5/5 · Контрарная ставка · Окно: 6–18 месяцев</div>
+ <div class="opp-title">Venue-Pays SaaS для топ-ночных заведений</div>
+ <div class="opp-body">Войти как инфраструктурный провайдер с принципиально иной моделью: заведение платит ежемесячный subscription fee, гости пользуются бесплатно. Никто из действующих игроков этого не делает.<br><br>Стартовая точка: 1 международный отель, 1 клуб в Савамале, 1 сплав на Савском Кею.</div>
+ <div class="opp-badge">Главная ставка</div>
+ </div>
+ <div class="opp-stat">
+ <div class="opp-stat-num">6–18</div>
+ <div class="opp-stat-label">месяцев стратегического окна до прихода конкурентов на Балканы</div>
+ </div>
+ </div>
+
+ <div class="opp-grid reverse">
+ <div class="opp-stat">
+ <div class="opp-stat-num">€6K</div>
+ <div class="opp-stat-label">стоимость event-пилота против €28,5K франшизы Brick</div>
+ </div>
+ <div class="opp-card">
+ <div class="opp-leverage">Leverage 4/5 · Безопасная ставка · ~€6–8K</div>
+ <div class="opp-title">Event-First пилот</div>
+ <div class="opp-body">Запустить 10–20 переносных станций на одном среднем фестивале. Это инструмент валидации с ограниченным downside.<br><br>Что измерять: аренды/станция/день, способы оплаты, интерес организаторов.<br><br>Долгосрочная цель: EXIT Festival — официальный зарядный партнёр 2026 года.</div>
+ <div class="opp-badge">Безопасный старт</div>
+ </div>
+ </div>
+
+ <div class="opp-grid">
+ <div class="opp-card">
+ <div class="opp-leverage">Leverage 3/5 · Спекулятивная ставка · Требует валидации</div>
+ <div class="opp-title">Dual-Device как B2B-аргумент</div>
+ <div class="opp-body">Комбинированная станция (телефон + е-сигарета) как дополнительный аргумент при подписании venue-контракта. Рынок е-сигарет Сербии $33,7M.<br><br>Подход: рендер без прототипа, 10 встреч с менеджерами. Если 6 из 10 готовы платить надбавку — заказывать прототип.</div>
+ <div class="opp-badge">Требует проверки</div>
+ </div>
+ <div class="opp-stat" style="background:var(--gray-100)">
+ <div class="opp-stat-num" style="font-size:40px">6/10</div>
+ <div class="opp-stat-label">заведений должны быть готовы к надбавке, чтобы инвестировать в прототип</div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ACTION PLAN -->
+<section id="plan">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-num">06</span>
+ <h2 class="section-title">План<br><em>действий</em></h2>
+ </div>
+ <div class="action-grid">
+ <div class="action-col">
+ <div class="action-col-header">Эта неделя</div>
+ <div class="action-col-title">Закрыть главный незакрытый риск</div>
+ <div class="action-item"><span class="action-item-num">01</span><span class="action-item-text">Найти 5 целевых заведений Белграда: 1 международный отель, 1 клуб в Савамале/Дорчоле, 1 сплав.</span></div>
+ <div class="action-item"><span class="action-item-num">02</span><span class="action-item-text">Связаться с менеджерами заведений с Dopuni.se<sup class="fn"><a href="#src-1">1</a></sup>: «Это эксклюзивный контракт?» Этот разговор закрывает главный риск анализа.</span></div>
+ <div class="action-item"><span class="action-item-num">03</span><span class="action-item-text">Сформулировать venue-pays питч на 1 страницу: что получает заведение, сколько платит, на каких условиях.</span></div>
+ </div>
+ <div class="action-col">
+ <div class="action-col-header">Этот месяц</div>
+ <div class="action-col-title">Валидация без железа</div>
+ <div class="action-item"><span class="action-item-num">04</span><span class="action-item-text">Провести 5 venue-встреч с питчем venue-pays SaaS. KPI: ≥3 letter of intent за 30 дней = модель валидирована.</span></div>
+ <div class="action-item"><span class="action-item-num">05</span><span class="action-item-text">Выбрать средний фестиваль для event-пилота летом 2026 года (не EXIT на первый раз). Подать заявку как вендор.</span></div>
+ <div class="action-item"><span class="action-item-num">06</span><span class="action-item-text">Показать рендер dual-device 10 менеджерам. Фиксировать дословные ответы — живые разговоры, не анкетирование.</span></div>
+ </div>
+ <div class="action-col">
+ <div class="action-col-header">Этот квартал</div>
+ <div class="action-col-title">Точка разворота</div>
+ <div class="action-item"><span class="action-item-num">A</span><span class="action-item-text"><strong>Тест прошёл (≥3 LoI):</strong> Закупить ~20 станций, развернуть в 3–5 якорных заведениях, собрать 60 дней данных.</span></div>
+ <div class="action-item"><span class="action-item-num">B</span><span class="action-item-text"><strong>Тест провалился (&lt;3 LoI):</strong> Пауза. Исследовать urban storage lockers в Белграде — та же venue-логика, более высокая unit-экономика.</span></div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- CONCLUSION -->
+<section class="conclusion" id="conclusion">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-num">07</span>
+ <h2 class="section-title">Заключение</h2>
+ </div>
+ <p class="conclusion-body">
+ Рынок аренды зарядных устройств в Сербии реален — тезис подтверждён 100 000 транзакциями<sup class="fn"><a href="#src-1">1</a></sup>, а не моделированием. Белград структурно создаёт одни из лучших условий для этого продукта в Европе: ночная жизнь мирового класса<sup class="fn"><a href="#src-12">12</a></sup>, высокое проникновение смартфонов<sup class="fn"><a href="#src-4">4</a></sup>, растущий поток иностранных туристов<sup class="fn"><a href="#src-6">6</a></sup>.
+ </p>
+ <p class="conclusion-body">
+ Вместе с тем это <strong style="color:var(--white)">операторский бизнес с операторскими рисками</strong>: тонкая маржа, зависимость от качества партнёров, отсутствие сетевых эффектов и нулевая лояльность конечного потребителя. Helbiz<sup class="fn"><a href="#src-16">16</a></sup> ушёл именно на этом — $63,7M убытков при высоком capex и низкой WTP. Здесь другая история, если дисциплинированно управлять портфелем заведений.
+ </p>
+ <div class="conclusion-cta">
+ <div class="conclusion-cta-label">Следующий шаг</div>
+ <div class="conclusion-cta-text">«Это эксклюзивный контракт?»</div>
+ <div class="conclusion-cta-sub">Не модель, не бизнес-план, не инвестиции. Один звонок менеджеру заведения с Dopuni.se на стойке закрывает главный незакрытый риск всего анализа.</div>
+ </div>
+ </div>
+</section>
+
+<!-- SOURCES -->
+<section id="sources" style="background:var(--gray-100);border:none">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-num">—</span>
+ <h2 class="section-title" style="font-size:32px">Источники</h2>
+ </div>
+ <div class="sources-list">
+ <div class="source-item" id="src-1"><span class="source-num">1</span><span>Dopuni.se · <a href="https://dopunise.com" target="_blank">dopunise.com</a> · LinkedIn (100K аренд, авг. 2025) · App Store</span></div>
+ <div class="source-item" id="src-2"><span class="source-num">2</span><span>Brick Serbia · <a href="https://www.brick.tech/sr-rs/rent" target="_blank">brick.tech</a> · <a href="https://articles.brick.tech/the-ultimate-brick-franchising-guide/" target="_blank">Руководство по франчайзингу</a> · Battery Anxiety article</span></div>
+ <div class="source-item" id="src-3"><span class="source-num">3</span><span>GlobeNewswire — Global Power Bank Rental Services Market, $15.9B by 2030, CAGR 13.5% (2022)</span></div>
+ <div class="source-item" id="src-4"><span class="source-num">4</span><span>DataReportal — <a href="https://datareportal.com/reports/digital-2024-serbia" target="_blank">Digital 2024: Serbia</a> · ВВП, смартфоны, интернет, платежи, использование</span></div>
+ <div class="source-item" id="src-5"><span class="source-num">5</span><span>Airbtics — Belgrade Airbnb Statistics · <a href="https://airbtics.com" target="_blank">airbtics.com</a> (86,9% иностранцы, 2024)</span></div>
+ <div class="source-item" id="src-6"><span class="source-num">6</span><span>SEENews — Foreign tourist visits to Serbia rise 11.7% in 2024 · <a href="https://seenews.com" target="_blank">seenews.com</a></span></div>
+ <div class="source-item" id="src-7"><span class="source-num">7</span><span>LG / YouGov — Low Battery Anxiety Grips 9 out of Ten People (2016) · prnewswire.com</span></div>
+ <div class="source-item" id="src-8"><span class="source-num">8</span><span>NTIA — 82% of Young Adults Feel Unsafe at Night with Dead Phone (2023) · ntia.co.uk</span></div>
+ <div class="source-item" id="src-9"><span class="source-num">9</span><span>Всемирный банк — Serbia Digital Payments (2025) · World Bank Documents</span></div>
+ <div class="source-item" id="src-10"><span class="source-num">10</span><span>KOMS — Alternativni Izveštaj 2023 · <a href="https://www.mladi.org.rs" target="_blank">mladi.org.rs</a></span></div>
+ <div class="source-item" id="src-11"><span class="source-num">11</span><span>Statista — E-Cigarettes Serbia 2025 · $33,7M market, CAGR 3,29%</span></div>
+ <div class="source-item" id="src-12"><span class="source-num">12</span><span>Wikipedia — <a href="https://en.wikipedia.org/wiki/Nightlife_in_Belgrade" target="_blank">Nightlife in Belgrade</a> · <a href="https://en.wikipedia.org/wiki/Exit_(festival)" target="_blank">EXIT Festival</a> (210K посетителей из 80+ стран)</span></div>
+ <div class="source-item" id="src-13"><span class="source-num">13</span><span>ResearchGate — BlaBlaCar Serbia: Sharing Economy in Western Balkans (2024)</span></div>
+ <div class="source-item" id="src-14"><span class="source-num">14</span><span>Startup Genome — Belgrade and Novi Sad · <a href="https://startupgenome.com" target="_blank">startupgenome.com</a></span></div>
+ <div class="source-item" id="src-15"><span class="source-num">15</span><span>The China Project — Energy Monster: Rental Chargers in China (2021)</span></div>
+ <div class="source-item" id="src-16"><span class="source-num">16</span><span>Smart Cities Dive — Helbiz Exit from Nonprofitable Markets, $63,7M losses (2022)</span></div>
+ <div class="source-item" id="src-17"><span class="source-num">17</span><span>European Payments Council — Digital Payments Outlook Serbia (2024) · europeanpaymentscouncil.eu</span></div>
+ </div>
+ </div>
+</section>
+
+<footer>
+ <span>Attack Surface Framework · Белград &amp; Нови-Сад · 2025</span>
+ <span>Семифазная исследовательская методология</span>
+ <span>Конфиденциально</span>
+</footer>
+
+</body>
+</html>
